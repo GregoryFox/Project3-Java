@@ -12,8 +12,8 @@ public class GlobeWanderer {
 
     //Globals
 
-    public static localeClass[] locations;
-    public static globeWandererItems[] itemsArray;
+    public static LocaleClass[] locations;
+    public static GlobeWandererItems[] itemsArray;
     public static int[][] localeMatrix;
     public static int currentLocale = 0;
     public static String currentLocaleList;
@@ -48,67 +48,67 @@ public class GlobeWanderer {
     //This makes the 6 items in the game and the map
     private static void run() {
 
-        globeWandererItems item2 = new globeWandererItems(2);
+        GlobeWandererItems item2 = new GlobeWandererItems(2);
         item2.setItemName("Ice Pickaxe");
         item2.setLocale(2);
 
-        globeWandererItems item3 = new globeWandererItems(3);
+        GlobeWandererItems item3 = new GlobeWandererItems(3);
         item3.setItemName("Throwing Knife");
         item3.setLocale(4);
 
-        globeWandererItems item4 = new globeWandererItems(4);
+        GlobeWandererItems item4 = new GlobeWandererItems(4);
         item4.setItemName("Poison Dart");
         item4.setLocale(6);
 
-        globeWandererItems item5 = new globeWandererItems(5);
+        GlobeWandererItems item5 = new GlobeWandererItems(5);
         item5.setItemName("Silenced PPK Pistol");
         item5.setLocale(8);
 
-        globeWandererItems item0 = new globeWandererItems(0);
+        GlobeWandererItems item0 = new GlobeWandererItems(0);
         item0.setItemName("Secret Agent Handbook");
 
-        globeWandererItems item1 = new globeWandererItems(1);
+        GlobeWandererItems item1 = new GlobeWandererItems(1);
         item1.setItemName("Dapper Suit");
 
 
-        localeClass loc0 = new localeClass(0);
+        LocaleClass loc0 = new LocaleClass(0);
         loc0.setName("North America");
         loc0.setItem("map");
         loc0.setHasVisited(true);
 
-        localeClass loc1 = new localeClass(1);
+        LocaleClass loc1 = new LocaleClass(1);
         loc1.setName("South America");
 
-        localeClass loc2 = new localeClass(2);
+        LocaleClass loc2 = new LocaleClass(2);
         loc2.setName("Arctic Circle");
         loc2.setItem(item2.getItemName());
 
-        localeClass loc3 = new localeClass(3);
+        LocaleClass loc3 = new LocaleClass(3);
         loc3.setName("Magick Shoppe");
 
-        localeClass loc4 = new localeClass(4);
+        LocaleClass loc4 = new LocaleClass(4);
         loc4.setName("Asia");
         loc4.setItem(item3.getItemName());
 
-        localeClass loc5 = new localeClass(5);
+        LocaleClass loc5 = new LocaleClass(5);
         loc5.setName("Magick Shoppe");
 
-        localeClass loc6 = new localeClass(6);
+        LocaleClass loc6 = new LocaleClass(6);
         loc6.setName("Africa");
         loc6.setItem(item4.getItemName());
 
-        localeClass loc7 = new localeClass(7);
+        LocaleClass loc7 = new LocaleClass(7);
         loc7.setName("Australia");
 
-        localeClass loc8 = new localeClass(8);
+        LocaleClass loc8 = new LocaleClass(8);
         loc8.setName("Russia");
         loc8.setItem(item5.getItemName());
 
-        localeClass loc9 = new localeClass(9);
+        LocaleClass loc9 = new LocaleClass(9);
         loc9.setName("You died");
 
 
-        locations = new localeClass[10];
+        locations = new LocaleClass[10];
 /*North America*/
         locations[0] = loc0;
 /*South America*/
@@ -219,87 +219,46 @@ public class GlobeWanderer {
     private static void move() {
     	
     	localeListMan localeList = new localeListMan();
-    	
-    	localeClass locale0 = new localeClass(0);
+
+        LocaleClass locale0 = new LocaleClass(0);
     	locale0.setName("North America");
 		localeList.add(locale0);
-		
-        localeClass locale1 = new locationClass(0);
+
+        LocaleClass locale1 = new LocaleClass(0);
         locale1.setName("South America");
-        locationList.add(locale1);
+        localeList.add(locale1);
 
-        localeClass locale2 = new localeClass(0);
+        LocaleClass locale2 = new LocaleClass(0);
         locale2.setName("Arctic Circle");
-        locationList.add(locale2);
+        localeList.add(locale2);
 
-        localeClass locale3 = new localeClass(0);
+        LocaleClass locale3 = new LocaleClass(0);
         locale3.setName("Magick Shoppe");
-        locationList.add(locale3);
+        localeList.add(locale3);
 
-        localeClass locale4 = new localeClass(0);
+        LocaleClass locale4 = new LocaleClass(0);
         locale4.setName("Asia");
-        locationList.add(locale4);
+        localeList.add(locale4);
 
-        localeClass locale5 = new localeClass(0);
+        LocaleClass locale5 = new LocaleClass(0);
         locale5.setName("Scandinavia");
-        locationList.add(locale5);
+        localeList.add(locale5);
 
-        localeClass locale6 = new localeClass(0);
+        LocaleClass locale6 = new LocaleClass(0);
         locale6.setName("Africa");
-        locationList.add(locale6);
+        localeList.add(locale6);
 
-        localeClass locale7 = new localeClass(0);
+        LocaleClass locale7 = new LocaleClass(0);
         locale7.setName("Australia");
         localeList.add(locale7);
 
-        localeClass locale8 = new localeClass(0);
+        LocaleClass locale8 = new LocaleClass(0);
         locale8.setName("Russia");
         localeList.add(locale8);
-        
-        localeClass locale9 = new localeClass(0);
+
+        LocaleClass locale9 = new LocaleClass(0);
         locale9.setName("You died.");
         localeList.add(locale9);
-    	
-    	
-    	if(currentLocaleList == "North America"){
-            localeList.setHead(locale0);
-        }
-
-        if(currentLocaleList == "South America"){
-            localeList.setHead(locale1);
-        }
-
-        if(currentLocaleList == "Arctic Circle"){
-            localeList.setHead(locale2);
-        }
-
-        if(currentLocaleList == "Magick Shoppe"){
-            localeList.setHead(locale3);
-        }
-
-        if(currentLocaleList == "Asia"){
-            localeList.setHead(locale4);
-        }
-
-        if(currentLocaleList == "Scandinavia"){
-            localeList.setHead(locale5);
-        }
-
-        if(currentLocaleList == "Africa"){
-            localeList.setHead(locale6);
-        }
-
-        if(currentLocaleList == "Australia"){
-            localeList.setHead(locale7);
-        }
-
-        if(currentLocaleList == "Russia"){
-            localeList.setHead(locale8);
-        }
-        
-        if)(currentLocaleList == "You died."){
-        	localeList.setHead(locale9);
-        }
     	
 
         if (input.equalsIgnoreCase("n") || input.equalsIgnoreCase("north")) {
@@ -314,7 +273,7 @@ public class GlobeWanderer {
         }
         else if (input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")){
             direction = 1;
-            locale0.setNext(locale4);
+            locale0.setNext(locale1);
             locale2.setNext(locale0);
             locale3.setNext(locale2);
             locale4.setNext(locale5);
@@ -344,7 +303,7 @@ public class GlobeWanderer {
             
         }
 
-        } else if (input.equalsIgnoreCase("h") || input.equalsIgnoreCase("help")) {
+         else if (input.equalsIgnoreCase("h") || input.equalsIgnoreCase("help")) {
             System.out.println("Use directional commands to move (n,north,s,south, etc.) and use i or inventory to see your inventory, and p or pick up to get items. Also, if the mission is too hard, use q or quit to end the game.");
             return;
         } else if (input.equalsIgnoreCase("i") || input.equalsIgnoreCase("inventory")) {
@@ -361,20 +320,19 @@ public class GlobeWanderer {
             System.out.println("Agent, please enter a valid command");
         }
 
-		
-		int newLocale = 0;
+
+		int newLocation = 0;
 
         if(direction >= 0){
-         newLocale = localeMatrix[currentLocale][direction];
-        } else{
-            System.out.println("error, will be fixed");
+            newLocation = localeMatrix[currentLocale][direction];
         }
         
-        
-         if (newLocale >= 0 && newLocale < 9 ){
+         if (newLocation >= 0 && newLocation < 9 ){
 
-            currentLocale = newLocale; 
-            moveCount = moveCount + 1; //add to move count
+             moves = moves + 1; //add to move count
+
+            currentLocale = newLocation;
+
 
             if (locations[currentLocale].getHasVisited() == false ){
                 locations[currentLocale].setHasVisited(true);
@@ -392,7 +350,9 @@ public class GlobeWanderer {
 
             }
 
-        } else if(newLoc == 9){
+        }
+         else if
+                 (newLocation == 9){
             System.out.println("You died and cannot go this way.");
 
         }
@@ -400,9 +360,9 @@ public class GlobeWanderer {
 
    if (localeList.getHead().getId() >= 0 && localeList.getHead().getNext().getName() != "You died." ){
 
-        localeList.setHead(localeList.getHead().getNext());
-        System.out.println("Your current location is " + localeList.getHead().getName());
-        currentLocaleList = localeList.getHead().getName();
+            localeList.setHead(localeList.getHead().getNext());
+            System.out.println("Your current location is " + localeList.getHead().getName());
+            currentLocaleList = localeList.getHead().getName();
         }
         else{
             System.out.println("You died and cannot go this way.");
@@ -413,7 +373,7 @@ public class GlobeWanderer {
 
 
         System.out.print("What would you like to buy? Or type q or quit.");
-        listMan magicItems  = new listMan();
+        ListMan magicItems  = new ListMan();
         Scanner inputReader = new Scanner(System.in);
 
 
@@ -426,10 +386,10 @@ public class GlobeWanderer {
         }
 
         final String fileName;
-        fileName = "C:\Users\Greg\Documents\GitHub\Project3-Java\items.txt";
+        fileName = "items.txt";
         
         
-        File myFile = new File(filename)
+        File myFile = new File(fileName);
         
         try{
         	Scanner input = new Scanner(myFile);
@@ -437,7 +397,7 @@ public class GlobeWanderer {
         		
         		String itemName = input.nextLine();
         		
-        		globeWandererItems fileItem = new globeWandererItems(idNum);
+        		GlobeWandererItems fileItem = new GlobeWandererItems(idNum);
         		fileItem.setItemName(itemName);
         		fileItem.setCost(Math.floor(Math.random() * 50));
         		fileItem.setNext(null);
@@ -447,7 +407,7 @@ public class GlobeWanderer {
         		idNum ++;
         		
         	}
-        }
+
         
         input.close();
         System.out.println(magicItems.toString());
@@ -459,54 +419,53 @@ public class GlobeWanderer {
      	createMagicItems();
      	
      }
-        
-        gameItems gi = new gameItems(idNum);
+
+         GlobeWandererItems gi = new GlobeWandererItems(idNum);
         gi = sequentialSearch(magicItems, targetItem);
         
         if (gi != null) {
-        	System.out.println(li.toString());
+        	System.out.println(gi.toString());
         	
         }
         
-        if(isFound){
-        	System.out.println("Would you like to buy?);
-        	
-        	
-        	Scanner input = new Scanner(System.in);
-        	String next = new String();
-        	next = input.nextLine();
-        	System.out.println();
-        	if (next.equals("yes") && money >= gi.getCost()){
-        		System.out.println("ok");
-        		if(id != 6){
-        			inventory[id] = gi.getItemName();
-        			id = id + 1;
-        			
-        		}
-        		else{
-        			System.out.println("You cannot hold anything else.);
-        		}
-        		else{
-        			System.out.println(money);
-        			System.out.println(next);
-        			System.out.println(gi.getCost());
-        			System.out.println("Thank you, goodbye");
-        		}
-        		else{
+        if(isFound) {
+            System.out.println("Would you like to buy?");
+
+
+            Scanner input = new Scanner(System.in);
+            String next = new String();
+            next = input.nextLine();
+            System.out.println();
+            if (next.equals("yes") && money >= gi.getCost()) {
+                System.out.println("ok");
+                if (id != 6) {
+                    inventory[id] = gi.getItemName();
+                    id = id + 1;
+
+                } else {
+                    System.out.println("You cannot hold anything else.");
+                }
+            } else {
+                System.out.println(money);
+                System.out.println(next);
+                System.out.println(gi.getCost());
+                System.out.println("Thank you, goodbye");
+            }
+        }else{
         			System.out.println("Nothing was found.");
         		}
         		
         		createMagicItems();
         	}
         	
-        }
+
         
-        private static globeWandererItems sequentialSearch(listMan lm, String target) {
-        	
-        	globeWandererItems retVal = null;
+        private static GlobeWandererItems sequentialSearch(ListMan lm, String target) {
+
+            GlobeWandererItems retVal = null;
         	System.out.println("Searching for " + target + ".");
         	int counter = 0;
-        	globeWandererItems currentItem = new globeWandererItems(idNum)
+            GlobeWandererItems currentItem = new GlobeWandererItems(idNum);
         		currentItem = lm.getHead();
         	
         	isFound = false;

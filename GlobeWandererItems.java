@@ -6,9 +6,9 @@
 
 //PUBLIC
 
-public class globeWandererItems {
+public class GlobeWandererItems {
 
-    public globeWandererItems(int theId) {
+    public GlobeWandererItems(int theId) {
         id = theId;
     }
     public int getId() {
@@ -47,11 +47,11 @@ public class globeWandererItems {
         this.locale = locale;
     }
 
-    public globeWandererItems getNext() {
+    public GlobeWandererItems getNext() {
         return next;
     }
 
-    public void setNext(globeWandererItems next) {
+    public void setNext(GlobeWandererItems next) {
         this.next = next;
     }
 
@@ -66,5 +66,5 @@ public class globeWandererItems {
     private String desc;
     private int    locale;
     private double cost;
-    private globeWandererItems next = null;
+    private GlobeWandererItems next = null;
 }

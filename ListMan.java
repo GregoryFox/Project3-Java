@@ -4,14 +4,14 @@
  *
  */
 
-public class listMan {
+public class ListMan {
 
     //
     // Public
     //
 
     // Constructor
-    public listMan() {
+    public ListMan() {
     }
 
     // Getters and Setters
@@ -29,18 +29,18 @@ public class listMan {
         this.desc = desc;
     }
 
-    public globeWandererItems getHead() {
+    public GlobeWandererItems getHead() {
         return head;
     }
-    public void setHead(globeWandererItems head) {
+    public void setHead(GlobeWandererItems head) {
         this.head = head;
     }
     
     
-    public void add(gameItems item) {
+    public void add(GlobeWandererItems item) {
     	
     	if (this.head == null) {
-    		
+
     		this.head = item;
     		this.last = item;
     		
@@ -49,7 +49,7 @@ public class listMan {
     		this.last.setNext(item);
     		this.last = item;
     	}
-    	}
+
     }
 
     // Other methods
@@ -57,7 +57,7 @@ public class listMan {
     public String toString() {
         String retVal;
         retVal = super.toString() + " name=" + this.name + " desc=" + this.desc + "\n";
-        globeWandererItems currentItem = this.head;
+        GlobeWandererItems currentItem = this.head;
         while (currentItem != null) {
             retVal = retVal + "   " + currentItem.toString() + "\n";
             currentItem = currentItem.getNext();
@@ -71,6 +71,6 @@ public class listMan {
     //
     private String name;
     private String desc;
-    private globeWandererItems head = null;
-	private globeWandererItems last = null;
+    private GlobeWandererItems head = null;
+	private GlobeWandererItems last = null;
 }

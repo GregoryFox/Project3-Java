@@ -12,15 +12,15 @@ public class LocaleClass {
     private String item;
     private boolean hasVisited = false;
     private int cash;
-    private localeClass next = null;
+    private LocaleClass next = null;
 
 
 
-    public localeClass getNext() {
+    public LocaleClass getNext() {
         return next;
     }
 
-    public void setNext(localeClass next) {
+    public void setNext(LocaleClass next) {
         this.next = next;
     }
 
@@ -40,7 +40,7 @@ public class LocaleClass {
         this.item = item;
     }
 
-    public localeClass(int theId) {
+    public LocaleClass(int theId) {
         this.id = theId;
     }
 

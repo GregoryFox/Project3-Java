@@ -6,18 +6,18 @@
 
 public class localeListMan {
 
-    private localeClass head = null;
-    private localeClass last = null;
+    private LocaleClass head = null;
+    private LocaleClass last = null;
 
 
-    public localeClass getHead() {
+    public LocaleClass getHead() {
         return head;
     }
-    public void setHead(localeClass head) {
+    public void setHead(LocaleClass head) {
         this.head = head;
     }
 
-    public void add(localeClass location) {
+    public void add(LocaleClass location) {
 
         if (this.head == null) {
 
