@@ -31,6 +31,14 @@ public class globeWandererItems {
         this.desc = desc;
     }
 
+	public double getCost() {
+		return cost;
+	}
+
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+
     public int getLocale() {
         return locale;
     }
@@ -57,5 +65,6 @@ public class globeWandererItems {
     private String itemName;
     private String desc;
     private int    locale;
+    private double cost;
     private globeWandererItems next = null;
 }
